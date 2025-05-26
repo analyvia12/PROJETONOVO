@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - Gestão de Eventos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> <!-- Seu CSS personalizado -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Gestão de Eventos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="formulario.html">Formulário</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção de Formulário -->
+    <header class="bg-info text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Cadastro de Evento</h1>
+            <p class="lead">Preencha o formulário abaixo para cadastrar seu evento conosco</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Informações do Evento</h2>
+            <form action="#" method="POST">
+                <div class="mb-3">
+                    <label for="nomeEvento" class="form-label">Nome do Evento</label>
+                    <input type="text" class="form-control" id="nomeEvento" name="nomeEvento" required>
+                    <div class="invalid-feedback">Por favor, insira o nome do evento.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="dataEvento" class="form-label">Data do Evento</label>
+                    <input type="date" class="form-control" id="dataEvento" name="dataEvento" required>
+                    <div class="invalid-feedback">Por favor, insira uma data válida.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descricaoEvento" class="form-label">Descrição</label>
+                    <textarea class="form-control" id="descricaoEvento" name="descricaoEvento" rows="3" required></textarea>
+                    <div class="invalid-feedback">Por favor, insira uma descrição do evento.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="contato" class="form-label">Contato (Email ou Telefone)</label>
+                    <input type="text" class="form-control" id="contato" name="contato" required>
+                    <div class="invalid-feedback">Por favor, insira um contato válido.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="tipoEvento" class="form-label">Tipo de Evento</label>
+                    <select class="form-select" id="tipoEvento" name="tipoEvento" required>
+                        <option value="" disabled selected>Escolha um tipo de evento</option>
+                        <option value="Congresso">Congresso</option>
+                        <option value="Festa">Festa</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                    <div class="invalid-feedback">Por favor, selecione o tipo de evento.</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Cadastrar Evento</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2025 Gestão de Eventos. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Validação de formulário (Bootstrap) -->
+    <script>
+        // Ativa a validação do formulário
+        (function() {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>
